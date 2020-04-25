@@ -1,15 +1,18 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import HomePage from './pages/home';
+import { Route, Switch } from 'react-router-dom';
 
 class App extends React.Component {
   render() {
     return (
       <div className='App'>
-        <HomePage />
+        <Switch>
+          <Route exact path='/' component={HomePage} />
+        </Switch>
       </div>
     );
   }
 }
 
-export default App
+export default App;
