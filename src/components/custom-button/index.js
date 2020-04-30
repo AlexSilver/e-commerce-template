@@ -1,3 +1,3 @@
-import { CustomButton } from "./custom-button.component";
+import { CustomButton } from './custom-button.component';
 
 export default CustomButton;
