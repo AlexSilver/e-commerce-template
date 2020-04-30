@@ -4,7 +4,6 @@ import { HomePage, ShopPage, SignInAndSignUpPage } from './pages';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import Header from './components/header';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { setCurrentUser } from './redux/user';
 
@@ -54,14 +53,12 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = ({user: {currentUser}}) => {
+const mapStateToProps = ({ user: { currentUser } }) => {
   return { currentUser };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({
-    setCurrentUser,
-  }, dispatch);
+const mapDispatchToProps = {
+  setCurrentUser,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
