@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.scss';
 import { HomePage, ShopPage, SignInAndSignUpPage } from './pages';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import Header from './components/header';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { bindActionCreators } from 'redux';
@@ -37,12 +37,26 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' component={HomePage} />
           <Route exact path='/shop' component={ShopPage} />
-          <Route exact path='/signin' component={SignInAndSignUpPage} />
+          <Route
+            exact
+            path='/signin'
+            render={() =>
+              this.props.currentUser ? (
+                <Redirect to='/' />
+              ) : (
+                <SignInAndSignUpPage />
+              )
+            }
+          />
         </Switch>
       </div>
     );
   }
 }
+
+const mapStateToProps = ({user: {currentUser}}) => {
+  return { currentUser };
+};
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
@@ -50,4 +64,4 @@ const mapDispatchToProps = (dispatch) => {
   }, dispatch);
 };
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
