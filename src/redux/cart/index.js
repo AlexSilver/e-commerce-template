@@ -1,2 +1,2 @@
-import { toggleCartHidden } from './cart.actions';
-export { toggleCartHidden };
+import { toggleCartHidden, addItem } from './cart.actions';
+export { toggleCartHidden, addItem };
