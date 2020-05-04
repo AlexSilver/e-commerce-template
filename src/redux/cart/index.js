@@ -1,2 +1,3 @@
 import { toggleCartHidden, addItem } from './cart.actions';
-export { toggleCartHidden, addItem };
+import { selectCartItems, selectCartItemsCount } from './cart.selectors';
+export { toggleCartHidden, addItem, selectCartItems, selectCartItemsCount };
