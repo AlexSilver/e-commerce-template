@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import { HomePage, ShopPage, SignInAndSignUpPage } from './pages';
+import { HomePage, ShopPage, SignInAndSignUpPage, CheckoutPage } from './pages';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import Header from './components/header';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
@@ -37,6 +37,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' component={HomePage} />
           <Route exact path='/shop' component={ShopPage} />
+          <Route exact path='/checkout' component={CheckoutPage} />
           <Route
             exact
             path='/signin'
@@ -55,7 +56,7 @@ class App extends React.Component {
 }
 
 const mapStateToProps = createStructuredSelector({
-  currentUser: selectCurrentUser
+  currentUser: selectCurrentUser,
 });
 
 const mapDispatchToProps = {
