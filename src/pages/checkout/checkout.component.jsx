@@ -10,7 +10,7 @@ const CheckoutPage = ({ cartItems, total }) => {
   const header = (
     <div className='checkout-header'>
       {headers.map((h) => (
-        <div className='header-block'>
+        <div key={h} className='header-block'>
           <span>{h}</span>
         </div>
       ))}
@@ -19,7 +19,7 @@ const CheckoutPage = ({ cartItems, total }) => {
 
   const items = (
     cartItems.map(item => (
-      <CheckoutItem key={item.id} {...item} />
+      <CheckoutItem key={item.id} item={item} />
     ))
   )
 
