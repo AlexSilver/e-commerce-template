@@ -1,3 +1,3 @@
-import { selectCollections, selectCollection } from './shop.selectors';
+import { selectCollections, selectCollectionsForPreview, selectCollection } from './shop.selectors';
 
-export { selectCollections, selectCollection };
+export { selectCollections, selectCollectionsForPreview, selectCollection };
