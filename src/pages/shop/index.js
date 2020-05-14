@@ -1,2 +1,2 @@
-import { ShopPage } from './shop.component';
+import ShopPage from './shop.component';
 export default ShopPage;
