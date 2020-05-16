@@ -1,4 +1,23 @@
-import { selectCollections, selectCollectionsForPreview, selectCollection } from './shop.selectors';
-import { updateCollections } from './shop.actions';
+import {
+  selectCollections,
+  selectCollectionsForPreview,
+  selectCollection,
+  selectIsFetching,
+  selectErrorMessage
+} from './shop.selectors';
+import {
+  fetchCollectionsStartAsync,
+  fetchCollectionsSuccess,
+  fetchCollectionsFailure,
+} from './shop.actions';
 
-export { selectCollections, selectCollectionsForPreview, selectCollection, updateCollections };
+export {
+  selectCollections,
+  selectCollectionsForPreview,
+  selectIsFetching,
+  selectErrorMessage,
+  selectCollection,
+  fetchCollectionsStartAsync,
+  // fetchCollectionsSuccess,
+  // fetchCollectionsFailure,
+};
