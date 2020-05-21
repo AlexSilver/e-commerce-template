@@ -1,8 +1,8 @@
 import { ShopActionTypes } from './shop.types';
 
 const INITIAL_STATE = {
-  collections: [],
-  isFecting: false,
+  collections: null,
+  isFetching: false,
   errorMessage: null
 };
 

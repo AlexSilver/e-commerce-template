@@ -2,22 +2,20 @@ import {
   selectCollections,
   selectCollectionsForPreview,
   selectCollection,
-  selectIsFetching,
-  selectErrorMessage
+  selectIsCollectionFetching,
+  selectErrorMessage,
+  selectIsCollectionsLoaded
 } from './shop.selectors';
 import {
-  fetchCollectionsStartAsync,
-  fetchCollectionsSuccess,
-  fetchCollectionsFailure,
+  fetchCollectionsStartAsync
 } from './shop.actions';
 
 export {
   selectCollections,
   selectCollectionsForPreview,
-  selectIsFetching,
+  selectIsCollectionFetching,
   selectErrorMessage,
+  selectIsCollectionsLoaded,
   selectCollection,
-  fetchCollectionsStartAsync,
-  // fetchCollectionsSuccess,
-  // fetchCollectionsFailure,
+  fetchCollectionsStartAsync
 };
