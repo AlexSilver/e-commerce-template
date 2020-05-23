@@ -7,7 +7,7 @@ import {
   selectIsCollectionsLoaded
 } from './shop.selectors';
 import {
-  fetchCollectionsStartAsync
+  fetchCollectionsStart
 } from './shop.actions';
 
 export {
@@ -17,5 +17,5 @@ export {
   selectErrorMessage,
   selectIsCollectionsLoaded,
   selectCollection,
-  fetchCollectionsStartAsync
+  fetchCollectionsStart
 };
