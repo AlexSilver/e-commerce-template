@@ -9,6 +9,7 @@ import {
 import {
   fetchCollectionsStart
 } from './shop.actions';
+import shopSagas from './shop.sagas';
 
 export {
   selectCollections,
@@ -17,5 +18,6 @@ export {
   selectErrorMessage,
   selectIsCollectionsLoaded,
   selectCollection,
-  fetchCollectionsStart
+  fetchCollectionsStart,
+  shopSagas
 };

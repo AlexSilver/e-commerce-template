@@ -1,3 +1,4 @@
-import { setCurrentUser } from './user.actions';
+import { setCurrentUser, googleSignInStart, emailSignInStart } from './user.actions';
 import { selectCurrentUser } from './user.selectors';
-export { setCurrentUser, selectCurrentUser };
+import userSagas from './user.sagas';
+export { setCurrentUser, selectCurrentUser, googleSignInStart, emailSignInStart, userSagas };

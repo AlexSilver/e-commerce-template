@@ -3,33 +3,28 @@ import './App.scss';
 import { HomePage, ShopPage, SignInAndSignUpPage, CheckoutPage } from './pages';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import Header from './components/header';
-import {
-  auth,
-  createUserProfileDocument,
-  // addCollectionAndDocuments,
-} from './firebase/firebase.utils';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import { setCurrentUser, selectCurrentUser } from './redux/user';
-// import { selectCollectionsForPreview } from './redux/shop';
+import { selectCurrentUser } from './redux/user';
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
-    const { setCurrentUser } = this.props;
 
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(async (user) => {
-      if (user) {
-        const userRef = await createUserProfileDocument(user);
 
-        userRef.onSnapshot((snapShot) => {
-          setCurrentUser({ id: snapShot.id, ...snapShot.data() });
-        });
-      }
 
-      setCurrentUser(user);
-    });
+    // this.unsubscribeFromAuth = auth.onAuthStateChanged(async (user) => {
+    //   if (user) {
+    //     const userRef = await createUserProfileDocument(user);
+
+    //     userRef.onSnapshot((snapShot) => {
+    //       setCurrentUser({ id: snapShot.id, ...snapShot.data() });
+    //     });
+    //   }
+
+    //   setCurrentUser(user);
+    // });
 
     // addCollectionAndDocuments(
     //   'collections',
@@ -71,8 +66,4 @@ const mapStateToProps = createStructuredSelector({
   // collectionsForPreview: selectCollectionsForPreview,
 });
 
-const mapDispatchToProps = {
-  setCurrentUser,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps)(App);
