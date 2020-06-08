@@ -5,14 +5,14 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import Header from './components/header';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import { selectCurrentUser } from './redux/user';
+import { selectCurrentUser, checkUserSession } from './redux/user';
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
-
-
+    const { checkUserSession } = this.props;
+    checkUserSession();
 
     // this.unsubscribeFromAuth = auth.onAuthStateChanged(async (user) => {
     //   if (user) {
@@ -66,4 +66,8 @@ const mapStateToProps = createStructuredSelector({
   // collectionsForPreview: selectCollectionsForPreview,
 });
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = {
+  checkUserSession,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
