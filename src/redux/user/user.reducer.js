@@ -38,12 +38,6 @@ const userReducer = (state, action) => {
         error: action.payload
       }
     }
-    
-    // case UserActionTypes.CHECK_USER_SESSION: {
-    //   return {
-
-    //   }
-    // }
     default:
       return state;
   }

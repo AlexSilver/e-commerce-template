@@ -32,6 +32,11 @@ const cartReducer = (state, action) => {
         ...state,
         cartItems: updateCartItem(state.cartItems, action.payload, -1),
       };
+    case CartActionTypes.CLEAR_CART:
+      return {
+        ...state,
+        cartItems: []
+      }
     default:
       return state;
   }
