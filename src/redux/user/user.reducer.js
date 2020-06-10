@@ -2,7 +2,7 @@ import UserActionTypes from './user.types';
 
 const INITIAL_STATE = {
   currentUser: null,
-  error: null
+  error: null,
 };
 
 const userReducer = (state, action) => {
@@ -15,28 +15,29 @@ const userReducer = (state, action) => {
       return {
         ...state,
         currentUser: action.payload,
-        error: null
+        error: null,
       };
     }
+    case UserActionTypes.SIGN_UP_FAILURE:
     case UserActionTypes.SIGN_IN_FAILURE: {
       return {
         ...state,
         currentUser: null,
-        error: action.payload
-      }
+        error: action.payload,
+      };
     }
     case UserActionTypes.SIGN_OUT_SUCCESS: {
       return {
         ...state,
         currentUser: null,
-        error: null
+        error: null,
       };
     }
     case UserActionTypes.SIGN_OUT_FAILURE: {
       return {
         ...state,
-        error: action.payload
-      }
+        error: action.payload,
+      };
     }
     default:
       return state;

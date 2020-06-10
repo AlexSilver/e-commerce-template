@@ -4,6 +4,7 @@ import {
   emailSignInStart,
   checkUserSession,
   signOutStart,
+  signUpStart
 } from './user.actions';
 import { selectCurrentUser } from './user.selectors';
 import userSagas from './user.sagas';
@@ -17,4 +18,5 @@ export {
   userSagas,
   checkUserSession,
   signOutStart,
+  signUpStart
 };
