@@ -5,9 +5,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  // border: 1px solid black;
   margin: 0 7.5px 15px;
   overflow: hidden;
+
+  @media screen and (max-width: 800px) {
+    height: 200px;
+  }
+
+  @media screen and (min-width: 800px) {
+    &.large {
+      height: 380px;
+    }
+  }
 
   &:hover {
     cursor: pointer;
@@ -22,9 +31,7 @@
     }
   }
 
-  &.large {
-    height: 380px;
-  }
+  
 
   &:first-child {
     margin-right: 7.5px;
